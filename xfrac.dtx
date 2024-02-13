@@ -24,7 +24,7 @@
 % for those people who are interested.
 %
 %<*driver|package>
-\RequirePackage{amstext,graphicx,textcomp,xparse,xtemplate}
+\RequirePackage{amstext,graphicx,textcomp,xtemplate}
 %</driver|package>
 %<*driver>
 \documentclass[full]{l3doc}
@@ -523,6 +523,12 @@
 \providecommand \IfFormatAtLeastTF { \@ifl@t@r \fmtversion }
 %    \end{macrocode}
 % \end{macro}
+%
+%    \begin{macrocode}
+\IfFormatAtLeastTF { 2020-10-01 }
+  { }
+  { \RequirePackage { xparse } }
+%    \end{macrocode}
 %
 % \begin{variable}{\l_@@_cm_std_bool}
 %   There is one option to support.
