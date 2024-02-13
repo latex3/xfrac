@@ -1,0 +1,42 @@
+# The test framework itself
+l3build
+#
+# Required to build plain and LaTeX formats including (u)pLaTeX
+latex-bin
+luahbtex
+tex
+xetex
+#
+# Then get the rest of required LaTeX
+amsmath
+tools
+#
+# Assuming a 'basic' font set up, metafont is required to avoid
+# warnings with some packages and errors with others
+metafont
+mfware
+#
+# Dependencies
+amsmath
+graphics
+l3packages
+lualatex-math
+tools
+#
+# For the doc target
+alphalph
+amsfonts
+booktabs
+colortbl
+csquotes
+ec
+enumitem
+epstopdf
+epstopdf-pkg
+fancyvrb
+hologo
+hypdoc
+hyperref
+psnfss
+underscore
+units
