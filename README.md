@@ -16,7 +16,7 @@ The issue tracker for LaTeX is currently located
 
 ## Development team
 
-The LaTeX kernel is developed by [The LaTeX Project](https://latex-project.org).
+This code is developed by [The LaTeX Project](https://latex-project.org).
 
 ## License
 
