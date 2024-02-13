@@ -24,7 +24,7 @@
 % for those people who are interested.
 %
 %<*driver|package>
-\RequirePackage{amstext,graphicx,xtemplate}
+\RequirePackage{amstext,graphicx}
 %</driver|package>
 %<*driver>
 \documentclass[full]{l3doc}
@@ -563,6 +563,12 @@
   }
 %    \end{macrocode}
 %
+%    \begin{macrocode}
+\IfFormatAtLeastTF { 2024-06-01 }
+  { }
+  { \RequirePackage { xtemplate } }
+%    \end{macrocode}
+%
 % \begin{variable}{\l_@@_slash_box}
 % \begin{variable}{\l_@@_tmp_box}
 %   In keeping with the \LaTeX3 philosophy, rather than use generic
@@ -692,7 +698,10 @@
 % There is only one object type in \pkg{xfrac}, rather unimaginatively
 % named \texttt{xfrac}.
 %    \begin{macrocode}
-\DeclareObjectType { xfrac } { 3 }
+\IfFormatAtLeastTF { 2024-06-01 }
+  { \NewTemplateType }
+  { \DeclareObjectType }
+    { xfrac } { 3 }
 %    \end{macrocode}
 %
 % A single template interface is used for both text and math(s), which
