@@ -24,21 +24,6 @@
 % for those people who are interested.
 %
 %<*driver|package>
-% The version of expl3 required is tested as early as possible, as
-% some really old versions do not define \ProvidesExplPackage.
-\RequirePackage{expl3}[2018/02/21]
-%<package>\@ifpackagelater{expl3}{2018/02/21}
-%<package>  {}
-%<package>  {%
-%<package>    \PackageError{xfrac}{Support package l3kernel too old}
-%<package>      {%
-%<package>        Please install an up to date version of l3kernel\MessageBreak
-%<package>        using your TeX package manager or from CTAN.\MessageBreak
-%<package>        \MessageBreak
-%<package>        Loading xfrac will abort!%
-%<package>      }%
-%<package>    \endinput
-%<package>  }
 \RequirePackage{amstext,graphicx,l3keys2e,textcomp,xparse,xtemplate}
 %</driver|package>
 %<*driver>
@@ -501,6 +486,29 @@
 %
 %    \begin{macrocode}
 %<@@=xfrac>
+%    \end{macrocode}
+%
+% Load \pkg{expl3} \enquote{up-front} only if required.
+%    \begin{macrocode}
+\@ifundefined{ExplLoaderFileDate}
+  {\RequirePackage{expl3}}
+  {}
+%    \end{macrocode}
+%
+% Make sure that the version of \pkg{l3kernel} in use is sufficiently new.
+% We use \cs{ExplFileDate} as \cs{@ifpackagelater} doesn't work for pre-loaded
+% \pkg{expl3} in the absence of the package.
+%    \begin{macrocode}
+\@ifl@t@r\ExplLoaderFileDate{2018-02-21}
+  {}
+  {%
+    \PackageError{xfrac}{Support package expl3 too old}
+      {%
+        You need to update your installation of 'l3kernel'.\MessageBreak
+        Loading~xfrac~will~abort!%
+      }%
+    \endinput
+  }%
 %    \end{macrocode}
 %
 %    \begin{macrocode}
