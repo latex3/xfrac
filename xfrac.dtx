@@ -24,7 +24,7 @@
 % for those people who are interested.
 %
 %<*driver|package>
-\RequirePackage{amstext,graphicx,textcomp,xtemplate}
+\RequirePackage{amstext,graphicx,xtemplate}
 %</driver|package>
 %<*driver>
 \documentclass[full]{l3doc}
@@ -523,6 +523,12 @@
 \providecommand \IfFormatAtLeastTF { \@ifl@t@r \fmtversion }
 %    \end{macrocode}
 % \end{macro}
+%
+%    \begin{macrocode}
+\IfFormatAtLeastTF { 2020-02-02 }
+  { }
+  { \RequirePackage { textcomp } }
+%    \end{macrocode}
 %
 %    \begin{macrocode}
 \IfFormatAtLeastTF { 2020-10-01 }
