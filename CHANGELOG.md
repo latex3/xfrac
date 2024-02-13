@@ -1,0 +1,15 @@
+# Changelog
+All notable changes to the `xfrac` since February 2024 will be documented in
+this file.
+
+The format is based on [Keep a
+Changelog](https://keepachangelog.com/en/1.0.0/), this project uses date-based
+'snapshot' version identifiers.
+
+## [Unreleased]
+
+### Changed
+- New independent repository https://github.com/latex3/xfrac
+- Preparation for move of `xtemplate` concepts to the kernel
+
+[Unreleased]: https://github.com/latex3/latex3/compare/2023-10-10...HEAD
