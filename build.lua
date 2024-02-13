@@ -6,7 +6,7 @@ module = "xfrac"
 
 -- Detail how to set the version automatically
 
-tagfiles = {"*.dtx","CHANGELOG.md"}
+tagfiles = {"*.dtx","*.md"}
 
 function update_tag(file,content,tagname,tagdate)
     local iso = "%d%d%d%d%-%d%d%-%d%d"
@@ -23,6 +23,8 @@ function update_tag(file,content,tagname,tagdate)
         iso .. "%.%.%.HEAD",
         tagname .. "...HEAD\n[" .. tagname .. "]: " .. url .. previous
           .. "..." .. tagname)
+    elseif string.match(file,"README.md") then
+        return string.gsub(content,"Release " .. iso,"Release " .. tagname)
     else
       -- xfrac.dtx
       content = string.gsub(content,
