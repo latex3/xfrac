@@ -38,6 +38,7 @@ hologo
 hypdoc
 hyperref
 infwarerr
+pdftexcmds
 psnfss
 underscore
 units
