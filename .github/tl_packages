@@ -29,6 +29,7 @@ amsfonts
 booktabs
 colortbl
 csquotes
+dvips
 ec
 enumitem
 epstopdf
