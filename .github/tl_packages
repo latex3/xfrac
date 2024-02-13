@@ -39,6 +39,7 @@ hypdoc
 hyperref
 iftex
 infwarerr
+kvoptions
 pdftexcmds
 psnfss
 underscore
