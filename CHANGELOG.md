@@ -10,6 +10,7 @@ Changelog](https://keepachangelog.com/en/1.0.0/), this project uses date-based
 
 ### Changed
 - New independent repository https://github.com/latex3/xfrac
+- Updated package dependencies (track kernel improvements)
 - Preparation for move of `xtemplate` concepts to the kernel
 
 [Unreleased]: https://github.com/latex3/latex3/compare/2023-10-10...HEAD
