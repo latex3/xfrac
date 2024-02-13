@@ -983,19 +983,24 @@
 % separate template for each. You already saw the \enquote{text}
 % template, and here is the \enquote{math} template.
 %    \begin{macrocode}
-\DeclareRestrictedTemplate { xfrac } { text } { math }
+\IfFormatAtLeastTF { 2024-06-01 }
   {
-    numerator-font      = \number \fam ,
-    slash-symbol        = /            ,
-    slash-symbol-font   = \number \fam ,
-    denominator-font    = \number \fam ,
-    scale-factor        = 0.7          ,
-    scale-relative      = false        ,
-    scaling             = true         ,
-    denominator-bot-sep = 0 pt         ,
-    math-mode           = true         ,
-    phantom             = ( % )
+    \DeclareTemplateCopy { xfrac } { math } { text }
+    \EditTemplateDefaults { xfrac } { math }
   }
+  { \DeclareRestrictedTemplate { xfrac } { text } { math } }
+    {
+      numerator-font      = \number \fam ,
+      slash-symbol        = /            ,
+      slash-symbol-font   = \number \fam ,
+      denominator-font    = \number \fam ,
+      scale-factor        = 0.7          ,
+      scale-relative      = false        ,
+      scaling             = true         ,
+      denominator-bot-sep = 0 pt         ,
+      math-mode           = true         ,
+      phantom             = ( % )
+    }
 %    \end{macrocode}
 %
 %\subsection{The standard instances}
