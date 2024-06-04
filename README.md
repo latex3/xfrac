@@ -1,6 +1,6 @@
 # `xfrac`: Split level fractions
 
-Release 2024-02-13
+Release 2024-06-04
 
 ## Overview
 

@@ -8,6 +8,8 @@ Changelog](https://keepachangelog.com/en/1.0.0/), this project uses date-based
 
 ## [Unreleased]
 
+## [2024-06-04]
+
 ### Changed
 
 - Update for kernel change from `\IfInstanceExistTF`
@@ -20,5 +22,6 @@ Changelog](https://keepachangelog.com/en/1.0.0/), this project uses date-based
 - Updated package dependencies (track kernel improvements)
 - Preparation for move of `xtemplate` concepts to the kernel
 
-[Unreleased]: https://github.com/latex3/latex3/compare/2024-02-13...HEAD
+[Unreleased]: https://github.com/latex3/latex3/compare/2024-06-04...HEAD
+[2024-06-04]: https://github.com/latex3/xfrac/compare/2024-02-13...2024-06-04
 [2024-02-13]: https://github.com/latex3/xfrac/compare/2023-10-10...2024-02-13
