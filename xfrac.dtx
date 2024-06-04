@@ -567,6 +567,8 @@
 \IfFormatAtLeastTF { 2024-06-01 }
   { }
   { \RequirePackage { xtemplate } }
+\cs_if_exist:NF \IfInstanceExistsTF
+  { \cs_new_eq:NN \IfInstanceExistsTF \IfInstanceExistTF }
 %    \end{macrocode}
 %
 % \begin{variable}{\l_@@_slash_box}
@@ -1109,16 +1111,16 @@
   {
     \mode_if_math:TF
       {
-        \IfInstanceExistTF { xfrac } { mathfam \number \fam }
+        \IfInstanceExistsTF { xfrac } { mathfam \number \fam }
           { \UseInstance { xfrac } { mathfam \number \fam } }
           { \UseInstance { xfrac } { mathdefault } }
         {#2} {#3} {#4}
       }
       {
-        \IfInstanceExistTF { xfrac } {#1}
+        \IfInstanceExistsTF { xfrac } {#1}
           { \UseInstance { xfrac } {#1} }
           {
-            \IfInstanceExistTF { xfrac } { \f@family }
+            \IfInstanceExistsTF { xfrac } { \f@family }
               { \UseInstance { xfrac } { \f@family } }
               { \UseInstance { xfrac } { default } }
           }

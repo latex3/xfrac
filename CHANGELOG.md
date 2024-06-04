@@ -8,6 +8,11 @@ Changelog](https://keepachangelog.com/en/1.0.0/), this project uses date-based
 
 ## [Unreleased]
 
+### Changed
+
+- Update for kernel change from `\IfInstanceExistTF`
+  to `\IfInstanceExistsTF`
+
 ## [2024-02-13]
 
 ### Changed
