@@ -695,6 +695,19 @@
 % \end{macro}
 % \end{macro}
 %
+% \begin{macro}{\@@_ensure_dir:}
+%   A macro to set the direction of the constructed
+%   boxes to the math direction in Lua\TeX.
+%    \begin{macrocode}
+\cs_new:Npn \@@_ensure_dir: { }
+\sys_if_engine_luatex:T
+  {
+    \cs_set_protected:Npn \@@_ensure_dir: { \textdirection = \mathdirection  \scan_stop: }
+  }
+%    \end{macrocode}
+% \end{macro}
+%   
+%
 % \subsection{The template}
 %
 % There is only one object type in \pkg{xfrac}, rather unimaginatively
@@ -831,6 +844,7 @@
 %    \begin{macrocode}
     \@@_text_or_math:n
       {
+        \@@_ensure_dir:
         \m@th
         \hbox_set:Nn \l_@@_tmp_box
           { \@@_math:n { \vphantom { ( ) } } }
