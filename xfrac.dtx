@@ -702,7 +702,14 @@
 \cs_new:Npn \@@_ensure_dir: { }
 \sys_if_engine_luatex:T
   {
-    \cs_set_protected:Npn \@@_ensure_dir: { \textdirection = \mathdirection  \scan_stop: }
+    \cs_set_protected:Npn \@@_ensure_dir:
+      {
+        \int_compare:nNnF
+          { \tex_textdirection:D } = { \tex_mathdirection:D }
+            {
+              \int_set_eq:NN \tex_textdirection:D \tex_mathdirection:D
+            }
+      }
   }
 %    \end{macrocode}
 % \end{macro}
