@@ -10,7 +10,7 @@ tagfiles = {"*.dtx","*.md"}
 
 function update_tag(file,content,tagname,tagdate)
     local iso = "%d%d%d%d%-%d%d%-%d%d"
-  
+
     if string.match(file,"CHANGELOG.md") then
       -- CHANGELOG.md
       local url = "https://github.com/latex3/xfrac/compare/"
